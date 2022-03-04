@@ -1,13 +1,13 @@
-package com.stprimm.weatherapp.ui.dashboard
+package com.stprimm.weatherapp.ui.currentlocation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class CurrentLocationViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
+        value = "This is current location Fragment"
     }
     val text: LiveData<String> = _text
 }
