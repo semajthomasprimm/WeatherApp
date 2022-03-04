@@ -1,4 +1,4 @@
-package com.stprimm.weatherapp.data
+package com.stprimm.weatherapp.data.model
 
 data class WeatherModel(
     val id: String,
