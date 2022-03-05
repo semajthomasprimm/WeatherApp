@@ -1,4 +1,4 @@
-package com.stprimm.weatherapp.data.model.repository
+package com.stprimm.weatherapp.data.repository
 
 import com.stprimm.weatherapp.data.model.WeatherModel
 import kotlinx.coroutines.flow.Flow

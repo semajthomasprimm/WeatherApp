@@ -1,10 +1,11 @@
 package com.stprimm.weatherapp.data.repository
 
 import com.stprimm.weatherapp.data.model.WeatherModel
-import com.stprimm.weatherapp.data.model.repository.WeatherRepository
+import com.stprimm.weatherapp.data.repository.WeatherRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class WeatherRepositoryImpl constructor(): WeatherRepository{
+class WeatherRepositoryImpl @Inject constructor(): WeatherRepository{
     override fun getAll(): Flow<List<WeatherModel>> {
         TODO("Not yet implemented")
     }
