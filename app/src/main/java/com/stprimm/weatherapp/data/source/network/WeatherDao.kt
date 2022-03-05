@@ -1,28 +1,22 @@
 package com.stprimm.weatherapp.data.source.network
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.stprimm.weatherapp.data.model.WeatherModel
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WeatherDao {
+
     @Query("SELECT * from weather")
-    fun getAll(): LiveData<List<WeatherEntity>>
+    fun getAll(): Flow<List<WeatherEntity>>
 
-    @Query("SELECT * from weather WHERE id = :id")
-    suspend fun get(id: Long): WeatherEntity
+    @Query("SELECT * from weather WHERE city_name = :city_name")
+    fun get(city_name: String): Flow<WeatherEntity>
 
-    @Insert
-    suspend fun insert(weather: WeatherEntity): Long
-
-    @Delete
-    suspend fun delete(weather: WeatherEntity)
-
-    @Query("DELETE FROM weather WHERE id=:id")
-    suspend fun delete(id: Long)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(weather: List<WeatherEntity>)
 
     @Query("DELETE FROM weather")
     suspend fun deleteAll()
 
-    @Update
-    suspend fun update(weather: WeatherEntity)
 }
