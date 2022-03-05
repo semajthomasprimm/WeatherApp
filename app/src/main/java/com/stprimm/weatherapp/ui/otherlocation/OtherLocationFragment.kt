@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.stprimm.weatherapp.databinding.FragmentOtherlocationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OtherLocationFragment : Fragment() {
 
     private lateinit var otherLocationViewModel: OtherLocationViewModel
@@ -31,9 +33,9 @@ class OtherLocationFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.textOtherlocation
-        otherLocationViewModel.text.observe(viewLifecycleOwner, Observer {
+        /*otherLocationViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
-        })
+        })*/
         return root
     }
 
